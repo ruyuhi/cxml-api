@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cxml</groupId>
 	<artifactId>cxml-api</artifactId>
-	<version>1.2.028-SNAPSHOT</version>
+	<version>1.2.028-release</version>
 	<name>CXML API</name>
 
 	<dependencies>
