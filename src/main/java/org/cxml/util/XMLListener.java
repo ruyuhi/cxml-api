@@ -13,9 +13,12 @@
  */
 package org.cxml.util;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlAttribute;
+
 
 /** 
  * TODO 对该类总结性的描述
@@ -39,6 +42,10 @@ public class XMLListener extends Marshaller.Listener {
 			f.setAccessible(true);
 			// 获取字段上注解<pre name="code" class="java">
 			try {
+				Annotation xmlAttribute =  f.getAnnotation(XmlAttribute.class);
+				if(xmlAttribute != null) {
+					continue;
+				}
 				if (f.getType() == String.class && f.get(source) == null) {
 					f.set(source, BLANK_CHAR);
 				}
